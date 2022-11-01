@@ -1,6 +1,5 @@
 # Login and Sign Up Page using Streamlit and MYSQL
 
-# Path: DBMS Assignment\SQL-Form\LICENSE
 MIT License
 Copyright (c) 2022 Daulatrao Patil
 
