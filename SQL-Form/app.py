@@ -9,7 +9,7 @@ import uuid as uid
 import footer
 
 conn = mysql.connector.connect(
-        host='localhost',
+        host='172.17.0.1',
         user='rao',
         passwd='password',
         database='DBMS_Assignment'
