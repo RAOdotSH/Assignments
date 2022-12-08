@@ -1,2 +1,5 @@
-mysql-connector-python==8.0.23
-streamlit==0.79.0
+htbuilder
+streamlit
+mysql-connector-python
+mysqlclient
+mysql-connector

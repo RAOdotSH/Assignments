@@ -8,6 +8,13 @@ import mysql.connector
 import uuid as uid
 import footer
 
+conn = mysql.connector.connect(
+        host='10.10.13.139',
+        user='rao',
+        passwd='password',
+        database='DBMS_Assignment'
+    )
+
 if 'id' not in st.session_state:
     st.session_state["id"] = None
 
@@ -108,22 +115,10 @@ def main():
         
 
 def create_usertable():
-    conn = mysql.connector.connect(
-        host='127.0.0.1',
-        user='root',
-        # passwd='root',
-        database='DBMS_Assignmnet'
-    )
     c = conn.cursor()
     c.execute("CREATE TABLE IF NOT EXISTS UsersTable(id TEXT, username TEXT, password TEXT)")
 
 def add_userdata(username, password):
-    conn = mysql.connector.connect(
-        host='127.0.0.1',
-        user='root',
-        # passwd='root',
-        database='DBMS_Assignmnet'
-    )
     c = conn.cursor()
     # Checking if the username already exists or not
     c.execute("SELECT * FROM UsersTable WHERE username = %s", (username,))
@@ -141,13 +136,6 @@ def add_userdata(username, password):
     conn.commit()
 
 def login_user(username, password):
-    conn = mysql.connector.connect(
-        host='127.0.0.1',
-        user='root',
-        # passwd='root',
-        database='DBMS_Assignmnet'
-    )
-
     if not username:
         st.warning("Please enter a username")
     elif not password:
@@ -194,13 +182,6 @@ def login_user(username, password):
         # return data
 
 def add_user_info(id, name, age, email, phone, gender):
-    conn = mysql.connector.connect(
-        host='127.0.0.1',
-        user='root',
-        # passwd='root',
-        database='DBMS_Assignmnet'
-    )
-
     c = conn.cursor()
 
     c.execute("CREATE TABLE IF NOT EXISTS UserInfo(id TEXT, name TEXT, age TEXT, email TEXT, phone TEXT, gender TEXT)")
@@ -226,4 +207,3 @@ def add_user_info(id, name, age, email, phone, gender):
 if __name__ == '__main__':
     main()
     footer.footer()
-

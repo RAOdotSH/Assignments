@@ -62,7 +62,7 @@ def layout(*args):
 def footer():
     myargs = [
         br(),
-        "Created with ❤️ by<b> Walchand Linux Users' Group</b>",
+        "Created with ❤️ by<b> RAO.sh</b>",
         # link(
         #     "https://wcewlug.org",
         #     image("https://i.imgur.com/2xbJ8Zo.png", height=px(30)),
