@@ -1,0 +1,17 @@
+-- To create a user and give the privileges.
+CREATE USER 'rao'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON * . * TO 'rao'@'localhost';
+FLUSH PRIVILEGES;
+
+-- Create the Database
+CREATE DATABASE DBMS_Assignment;
+
+-- Pull mysql offical image
+docker pull mysql
+
+-- to run the app
+docker build -t sql-app .
+docker run -p 8080:8080 -it -d --name SQL-APP sql-app
+
+-- to run mysql DB
+docker -t -i MySQL /bin/bash
