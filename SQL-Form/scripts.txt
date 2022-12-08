@@ -8,6 +8,7 @@ CREATE DATABASE DBMS_Assignment;
 
 -- Pull mysql offical image
 docker pull mysql
+docker run --name MySQL -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root mysql
 
 -- to run the app
 docker build -t sql-app .
