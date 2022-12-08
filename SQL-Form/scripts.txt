@@ -16,3 +16,6 @@ docker run -p 8080:8080 -it -d --name SQL-APP sql-app
 
 -- to run mysql DB
 docker -t -i MySQL /bin/bash
+
+-- net stat
+netstat -lnp | grep 3306
