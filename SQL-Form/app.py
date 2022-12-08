@@ -9,7 +9,7 @@ import uuid as uid
 import footer
 
 conn = mysql.connector.connect(
-        host='10.10.13.139',
+        host='localhost',
         user='rao',
         passwd='password',
         database='DBMS_Assignment'
@@ -48,6 +48,12 @@ def main():
             create_usertable()
 
             User = login_user(username, password)
+
+            if not User:
+                st.warning("Incorrect Username/Password")
+                st.session_state["id"] = None
+                return
+
             id, user = User[0][0], User[0][1]
 
             st.session_state["id"] = id
